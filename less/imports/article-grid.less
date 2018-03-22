@@ -1,0 +1,81 @@
+//--- Style the article teaser grid
+
+.views-view-grid .views-col {
+  float: left;
+  padding: 1em;
+  max-width: 320px;
+}
+// Remove top border on the top row
+div.views-row.clearfix.row-1 div.views-col {
+  border-top: none !important;
+}
+// Remove left border in col-1
+div.views-col.col-1 {
+  border-left: none !important;
+}
+// Remove right border in col-3
+div.views-col.col-3 {
+  border-right: none !important;
+}
+// Remove bottom border in the last row
+.views-view-grid .views-row:last-child div {
+  border-bottom: none !important;
+}
+
+/*   Old logic (not working) is below.  @TODO remove!!!
+div.views-row.clearfix.row-1 div.views-col.col-1 {
+    border-right: 1px solid @p-border;
+}
+div.views-row.clearfix.row-1 div.views-col.col-3 {
+    border-left: 1px solid @p-border;
+}
+div.views-row.clearfix.row-2 div.views-col.col-1,
+div.views-row.clearfix.row-3 div.views-col.col-1,
+div.views-row.clearfix.row-4 div.views-col.col-1,
+div.views-row.clearfix.row-5 div.views-col.col-1,
+div.views-row.clearfix.row-6 div.views-col.col-1,
+div.views-row.clearfix.row-7 div.views-col.col-1,
+div.views-row.clearfix.row-8 div.views-col.col-1 {
+    border-right: 1px solid @p-border;
+    border-top: 1px solid @p-border;
+    border-bottom: 1px solid @p-border;
+}
+div.views-row.clearfix.row-2 div.views-col.col-3,
+div.views-row.clearfix.row-3 div.views-col.col-3,
+div.views-row.clearfix.row-4 div.views-col.col-3,
+div.views-row.clearfix.row-5 div.views-col.col-3,
+div.views-row.clearfix.row-6 div.views-col.col-3,
+div.views-row.clearfix.row-7 div.views-col.col-3,
+div.views-row.clearfix.row-8 div.views-col.col-3 {
+    border-left: 1px solid @p-border;
+    border-top: 1px solid @p-border;
+    border-bottom: 1px solid @p-border;
+}
+div.views-row.clearfix.row-2 div.views-col.col-2,
+div.views-row.clearfix.row-3 div.views-col.col-2,
+div.views-row.clearfix.row-4 div.views-col.col-2,
+div.views-row.clearfix.row-5 div.views-col.col-2,
+div.views-row.clearfix.row-6 div.views-col.col-2,
+div.views-row.clearfix.row-7 div.views-col.col-2,
+div.views-row.clearfix.row-8 div.views-col.col-2 {
+    border-top: 1px solid @p-border;
+    border-bottom: 1px solid @p-border;
+}
+div.views-view-grid.horizontal.cols-1.clearfix:last-child,
+div.views-view-grid.horizontal.cols-2.clearfix:last-child,
+div.views-view-grid.horizontal.cols-3.clearfix:last-child {
+    border-bottom: none !important;
+}
+.views-view-grid .views-row {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.views-view-grid .views-row:last-child div{
+    border-bottom: none !important;
+    border-top: none !important;
+}
+.views-view-grid .views-row:last-child .views-col:last-child{
+//border-right: 1px solid @p-border;
+}
+*/

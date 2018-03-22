@@ -1,0 +1,46 @@
+//--- Admin menu
+
+button.toolbar-icon,
+nav a.edit-devel-toolbar,
+ul.menu.nav li a,
+ul.toolbar-menu.nav li a,
+ul.toolbar-menu li a {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  margin: 5px 0 5px 5px;
+  .border-radius(5px);
+}
+
+ul.menu.nav li a.toolbar-horizontal-item-hidden {
+  display: none !important;
+}
+
+.toolbar .toolbar-toggle-orientation button {
+  height: 23px;
+}
+
+.toolbar-tray a {
+  padding: 10px;
+}
+
+nav a.edit-devel-toolbar:hover,
+nav a.edit-devel-toolbar:focus,
+nav a.edit-devel-toolbar:active,
+ul.menu.nav li a:hover,
+ul.menu.nav li a:focus,
+ul.menu.nav li a:active,
+ul.toolbar-menu li a:hover,
+ul.toolbar-menu li a:focus,
+ul.toolbar-menu li a:active,
+ul.menu.nav li a:hover,
+ul.menu.nav li a:focus,
+ul.menu.nav li a:active,
+ul.toolbar-menu.nav li a:hover,
+ul.toolbar-menu.nav li a:focus,
+ul.toolbar-menu.nav li a:active {
+  background-color: @primary;
+  color: contrast(@primary, @lite, @dark);
+}
+
+

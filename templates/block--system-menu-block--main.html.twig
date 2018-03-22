@@ -1,0 +1,33 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Override theme implementation for our main menu block.
+ *
+ * Available variables include:  [ use {{ dump(_context|keys) }} to dump all ]
+ *   elements 
+ *   attributes 
+ *   title_attributes
+ *   content_attributes
+ *   title_prefix
+ *   title_suffix
+ *   user 
+ *   directory
+ *   configuration
+ *   label
+ *   content
+ *   
+ * @ingroup templates
+ */
+#}
+
+{% block content %}
+
+<div class="rootstalk-main-menu-block">
+  <div class="block-content">
+    {{ content }}
+  </div>
+</div>
+
+{% endblock %}
+

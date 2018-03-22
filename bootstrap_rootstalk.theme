@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements hook_processes_views().
+ */
+
+function bootstrap_rootstalk_preprocess_views_view(&$variables) {
+  // drupal_set_message(array_slice($variables, 0, 1));
+  // drupal_set_message("This is " . __FILE__);
+  return;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function bootstrap_rootstalk_views_pre_render(\Drupal\views\ViewExecutable &$view) {
+  // Check the view name
+  $vid = $view->id();
+  $display = $view->current_display;
+  if ($vid == '3x_article_grid' && $display === 'page_2') {
+    //drupal_set_message(__FUNCTION__ . " called.  View ID is '$vid' and Display is '$display' ", 'info');
+    $tid = $view->args[0];   // This is the term ID for the selected taxonomy term
+    $term = \Drupal\taxonomy\Entity\Term::load($tid);
+    //ksm($term);
+    $image_uri_obj = $term->get('field_category_image')->entity;    // the image object
+    $image_uri = $image_uri_obj->uri->value;                        //the image public link
+    ksm($image_uri);
+  }
+}
+

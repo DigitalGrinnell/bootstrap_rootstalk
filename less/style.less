@@ -1,0 +1,550 @@
+// Bootstrap Framework.
+@import 'imports/bootstrap';
+// Base-theme overrides...
+@import 'imports/overrides';
+// Colors!
+@import 'imports/colors';
+// The article teaser grid.
+@import 'imports/article-grid';
+// Admin toolbars
+@import 'imports/admin-toolbars';
+//--- Mixin's------------------------------------------------------------//
+// https://codemyviews.com/blog/10-less-css-examples-you-should-steal-for-your-projects
+  .border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+  }
+//--- Implementations ----------------------------------------------------//
+//--- Editor text styles...  Keep these near the top since they are tied to defined styles.
+  p.pageBody {
+    font-size: 1.25em;
+    line-height: 1.15em;
+  }
+  p.articleBody {
+    font-size: 1.25em;
+    line-height: 1.15em;
+    padding-top: 10px;
+  }
+  p.codeBlock {
+    display: block;
+    padding: 10px;
+    margin: 10px 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid @s-border;
+    .border-radius(10px);
+    font-family: monospace;
+  }
+//-- Issue block
+section#block-views-block-issue-teaser-block-2 {
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+}
+div.past-issues-block {
+  background: @primary;
+  .border-radius(5px);
+  height: 249px;
+  padding-left: 10px;
+}
+div.past-issues-block.current-issue-block {
+  background: @secondary;
+  .border-radius(5px);
+  height: inherit;
+  padding-left: 10px;
+}
+div.past-issues-block.current-issue-block .view-content{
+  display: block;
+  float: left;
+}|
+div.past-issues-block div.view-content div.issue-row.views-row {
+  display: block;
+  clear: left;
+  padding: 15px 0;
+}
+div.past-issues-block.current-issue-block div.view-content div.issue-row.views-row span.views-field.views-field-field-thumbnail {
+  display: block;
+  width: 175px;
+  float: left;
+}
+div.past-issues-block.current-issue-block div.view-content div.issue-row.views-row span h3.issue-title{
+  margin-left: 15px !important;
+  color: #fff7ea;
+}
+div.past-issues-block.current-issue-block .view-content .issue-row.views-row .views-field.views-field-field-pdf{
+  display: none !important;
+}
+div.past-issues-block div.view-content div.issue-row.views-row span.views-field.views-field-field-thumbnail {
+  display: block;
+  width: 175px;
+  float: left;
+}
+div.past-issues-block div.view-content div.issue-row.views-row {
+  display: block;
+  float: left;
+}
+div.past-issues-block div.view-content div.issue-row.views-row span h3.issue-title {
+  display: block;
+  margin-left: 185px;
+}
+div.past-issues-block div.view-content div.issue-row.views-row span.views-field.views-field-body {
+  display: block;
+  margin-left: 185px;
+}
+div.past-issues-block div.view-content div.issue-row.views-row div.views-field.views-field-field-pdf {
+  display: block;
+  margin-left: 185px;
+}
+div.past-issues-block.current-issue-block div.view-content div.issue-row.views-row span, div.past-issues-block.current-issue-block div.view-content div.issue-row.views-row span.views-field.views-field-body {
+  display: block;
+  float: left;
+  margin-left: 15px;
+  max-width: 535px;
+}
+//-- journal article page
+div.field.field--name-field-image.field--type-image img {
+  border-bottom: 3px solid #fff7ea;
+  padding-bottom: 35px;
+}
+/*-- Current issue block (above the 3x grid on /issue/0)
+section#block-views-block-issue-teaser-block-2 div.form-group div.past-issues-block div.view-content div.issue-row.views-row {
+  width: 100%
+}
+*/
+//-- maintenance page
+body.maintenance-page.path-frontpage {
+  text-align: center;
+}
+body.maintenance-page.path-frontpage header h1,
+body.maintenance-page.path-frontpage header div {
+  display: none;
+  text-align: center;
+}
+body.maintenance-page.path-frontpage header a img {
+  width: 90%;
+}
+body.maintenance-page.path-frontpage header main {
+  display: block;
+  text-align: center;
+}
+//-- event detail page
+article.calendar-event.full div.content div.field.field--name-field-thumbnail img {
+  padding-top: 5px;
+  width: 100%;
+}
+article.calendar-event.full div.content div.field.field--name-field-event-date div.field--item {
+  font-size: xx-large;
+  font-weight: 600;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid @p-border;
+}
+article.calendar-event.full div.content div.field.field--name-body.field--type-text-with-summary {
+  font-size: x-large;
+  font-weight: 500;
+  padding: 5px 0 10px 0;
+  line-height: 1.25em;
+  color: @p-text;
+}
+//--- div.announcement
+  div.announcement {
+    display: block;
+    clear: both;
+    .border-radius(5px);
+    padding: 5px 10px;
+    margin: 15px;
+    margin-top: 5px;
+  }
+//--- My overrides.less won't compile???  Putting these overrides here to avoid errors!
+  body {
+    line-height: 1.2em !important;
+    font-size: 16px !important;
+  }
+  h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .alert {
+    margin-top: 10px;
+  }
+  .nav {
+    margin-top: 5px;
+  }
+//--- Background and text
+  div.rootstalk-block,                  // Secondary regions
+  #block-bootstrap-rootstalk-tools,
+  #block-development,
+  #block-views-block-next-pc-event-block-1 {
+    .border-radius(5px);
+    padding: 5px 15px;
+  }
+  div.rootstalk-block {
+    margin-top: 10px;
+  }
+//--- Primary region links
+  a {                                   // Defaults for all links
+    font-weight: normal;
+    text-decoration: none !important;   // NO underlines on links
+  }
+// dynamics
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline !important;
+  }
+//--- .dropdown-menu
+  .dropdown-menu {
+    border: none;
+    .border-radius(5px);
+  }
+//--- .breadcrumb
+  .breadcrumb {
+    .border-radius(5px);
+    margin-left: 15px;
+  }
+//--- article-info   See node--journal_article.html.php for details.
+  div.article-info {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    display: block;
+  }
+  div#article-long-title {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    display: block;
+    font-size: 2em;
+  }
+  div#author-image img {
+    border: 2px solid @p-border;
+    .border-radius(10px);
+  }
+  div#author-image {
+    float: left;
+    margin: 10px;
+    position: relative;
+    min-height: 295px;
+    min-width: 234px;
+    padding: 10px;
+  }
+  div#author-bio {
+    font-style: italic;
+    font-size: 1.15em;
+    line-height: 1.15em;
+    border: 2px solid @p-border;
+    .border-radius(10px);
+  }
+.article-info #author-image .field.field--name-field-author-image.field--type-image.field--label-hidden.field--item.quickedit-field {
+  position: absolute;
+  min-height: 295px;
+  min-width: 234px;
+  top: -10px;
+  padding: 0 15px 10px 0;
+}
+div#author-bio {
+  margin-top: 15px;
+}
+div#author-bio div.field.field--name-field-author-bio {
+  padding: 5px;
+}
+  //-- Region properties
+  #block-bootstrap-rootstalk-tools,
+  #block-development {
+    padding: 2px 10px;
+    margin: 5px;
+  }
+  //--- Journal article title_image
+  div.title-image {
+    display: block;
+    padding: 10px;
+  }
+  div.title-image img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+  //--- Content
+  figcaption {
+    font-style: italic;
+    font-size: small;
+  }
+  td.column-1,
+  td.column-2 {
+    width: 50%;
+  }
+  blockquote {
+    border-left: none;
+  }
+  figure {
+    max-width: 200px;
+  }
+  //--- Downloadable files and embedded links
+  div .field--label {
+    margin-top: 5px;
+  }
+  div .field--name-field-embedded-links div .field--item,
+  .file span {
+    .border-radius(5px);
+    border: 1px solid @s-border;
+    padding: 2px 10px;
+    margin: 5px 0;
+  }
+  //--- Site logo size and layout
+  .navbar-default {
+    border: none;
+  }
+  .navbar {
+    margin-bottom: 0;
+  }
+  .navbar-btn {
+    margin-top: 3px;
+    margin-bottom: 10px;
+  }
+  div.navbar-header {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  div.site-banner {
+    width: 100%;
+    height: 250px;
+    text-align: center;
+  }
+  a.logo.navbar-btn.pull-left {
+    width: 100%;
+  }
+  a.logo.navbar-btn.pull-left img {
+    width: 100%;
+    height: 300px;
+  }
+  //--- Main menu
+  div.col-sm-12 {
+    display: inline-block;
+    margin-bottom: 5px;
+    .border-radius(5px);
+  }
+  .navbar-right {
+    margin-right: 0 !important;
+  }
+  div.rootstalk-main-menu {
+    display: block;
+    background: @secondary;
+  }
+  //--- Social Media menu
+  /* common properties */
+  nav#block-socialmediamenu ul.menu.nav li a {
+    background-size: 30px 32px;
+    width: 30px;
+    height: 32px;
+    margin-top: 0px;
+    display: inline-block;
+    position: relative;
+    font-size: 0;
+  }
+  /* twitter link */
+  nav#block-socialmediamenu ul.menu.nav li a[href='https://twitter.com/grinnellprairie'] {
+    background-image: url("../images/twitterIcn.png");
+    background-position-y: 1px;
+    padding-left: 13px;
+    padding-top: 7px;
+  }
+  /* facebook link */
+  nav#block-socialmediamenu ul.menu.nav li a[href='https://www.facebook.com/rootstalkonline'] {
+    background-image: url("../images/fbIcn.png");
+    background-position: center;
+    padding-left: 17px;
+    padding-top: 10px;
+  }
+  nav#block-socialmediamenu {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  nav#block-socialmediamenu ul.menu.nav li.expanded.dropdown {
+    display: inline-block;
+    width: 40px;
+    height: 35px;
+    margin-top: 0px;
+    float: right;
+  }
+  //--- Page layout
+  .page-header {
+    padding-bottom: 2px;
+    margin: 0;
+    border-bottom: none;
+  }
+  //--- Rootstalk Block
+  .rootstalk-block .nav li a {
+    padding: 5px 15px 7px 15px;
+  }
+  div.byline,
+  div.author {
+    font-style: italic;
+    text-align: center;
+    font-size: 19px;
+    padding: 1.25em 2px;
+  }
+  body {
+    line-height: 1.0;
+  }
+  div.abstract {
+    font-size: 18px;
+    font-family: georgia, palantino, book antiqua, palantino, linotype, serif;
+    padding-top: 1em;
+  }
+  h5.article-form {
+    font-style: italic;
+  }
+  h3.short-title {
+    text-align: center;
+  }
+  //--- Article page
+  /*  HIDES TOO MUCH!
+  body div.main-container.container.js-quickedit-main-content div div div h1 {
+    display: none;
+  }
+  */
+  #pdf-pages-0 {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  //--- Past Issues page
+  div.past-issues-block div.issue-row span span table tbody tr td {
+    padding: 10px 10px 0 0;
+  }
+  div.past-issues-block div.issue-row span span table tbody tr td p.issue-title a {
+    font-size: x-large;
+    font-weight: bold;
+  }
+  div.issue-row {
+  /*  border-bottom: 1px solid @p-border; */
+    width: 90%;
+    margin: 10px;
+    padding: 5px;
+  }
+  //--- About Us page
+  td.about-us-statement {
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
+  }
+  //--- .well - The secondary (right-hand) block region
+  .well {
+    padding: 0 15px 15px 15px;
+    border: none;
+    margin-left: -25px;
+  }
+  #block-views-block-next-pc-event-block-1,
+  div.rootstalk-block {
+    margin-bottom: 1em;
+  }
+  .rootstalk-block h2,
+  #block-views-block-next-pc-event-block-1 h2 {
+    margin-top: 0 !important;
+  }
+  #block-views-block-next-pc-event-block-1 div.form-group div div.view-header,
+  div.rootstalk-block div.block-text p {
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    .border-radius(5px);
+    margin-bottom: 15px;
+  }
+  div.field-content {
+    padding: 10px 0;
+  }
+  div.views-field.views-field-body div p {
+    font-size: 0.9em;
+    padding: 2px;
+  }
+  #block-views-block-next-pc-event-block-1 div.form-group div div.view-content div div.views-field.views-field-field-thumbnail div img {
+    text-align: center;
+  }
+  .events-view div.view-content div.views-row,
+  div.rootstalk-block div.block-content {
+    border-top: 1px solid @s-border;
+    padding-top: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+  }
+  #block-views-block-next-pc-event-block-1 div.form-group div div.view-content div div.views-field.views-field-field-event-date div time {
+    font-size: 75%;
+  }
+  #block-views-block-next-pc-event-block-1 div.form-group div div.view-content div div.views-field.views-field-field-event-link div a {
+    display: block;
+    padding: 5px;
+  }
+  //--- search
+  .input-group {
+    margin-top: 5px;
+  }
+  input.form-search.form-control {
+    border: solid 1px #FEE4B8;
+  }
+.input-group-btn:last-child > .btn {
+  border: solid 1px #FEE4B8;
+}
+//--- .pdf-canvas
+  .pdf-canvas {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 2px;
+    width: 100%;   // MAM. This may fix the PDF width issue, but does it leave us with "fuzzy" PDFs?
+  }
+  //--- .statistics-counter
+  .statistics-counter {
+    margin: 10px;
+    padding: 10px !important;
+  }
+  //--- .link-button
+p.link-button {
+  border: solid 1px #FEE4B8;
+  margin: 0 auto;
+  margin-bottom: 9px;
+    padding: 9px 5px 9px 5px;
+    width: 17%;
+    .border-radius(10px);
+  }
+p.text-align-center.link-button:hover {
+  background-color: #8B9773;
+}
+  //--- div.panel
+  div.panel {
+    .border-radius(5px);
+    border: none;
+  }
+  /****** this is the new form section *****/
+  .form-item-bio{
+    margin-bottom: 15px;
+  }
+  .form-item-tel>label{
+    margin-right: 10px;
+  }
+  .description{
+    margin-top: 10px;
+  }
+  #edit-checkboxes--wrapper>legend{
+    display: none;
+  }
+  #edit-classifications{
+    display: none;
+  }
+  div.form-item.form-item-notes {
+    margin-top: 10px;
+  }
+  button.tabledrag-toggle-weight {
+    display: none;
+  }
+  .menu.dropdown-menu .expanded.dropdown a{
+    margin: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+  }
+.views-view-grid .views-row {
+  border-top: 2px solid #fff7ea;
+  display: flex;
+}
+.views-col.col-1, .views-col.col-2 {
+  border-right: 2px solid #fff7ea;
+}

@@ -1,0 +1,281 @@
+/* colors.less
+ *
+ * This .less should define any and all colors ONLY.  Only
+ *   background-color and color (foreground) should appear here!
+ */
+
+//--- Definitions --------------------------------------------------------//
+
+@base: #3b4030;    // base/background color
+@lite: #fff7ea;    // contrast(lite) color
+@dark: #000000;    // contrast(dark) color
+
+@primary: @base;
+@p-link: contrast(@primary, @lite, @dark);
+@p-text: darken(@p-link, 10%);
+@p-border: contrast(@primary, @lite, @dark);
+
+@secondary: lighten(@base, 10%);
+@s-link: contrast(@secondary, @lite, @dark);
+@s-text: darken(@s-link, 10%);
+@s-border: contrast(@secondary, @lite, @dark);
+
+@author: lighten(@primary, 20%);
+
+@complement1: spin(@primary, 180);
+@complement2: darken(spin(@primary, 180), 5%);
+@lighten1: lighten(@primary, 15%);
+@lighten2: lighten(@primary, 30%);
+
+//--- Implementations ----------------------------------------------------//
+
+//--- Editor text styles...  Keep these near the top since they are tied to defined styles.
+
+p.pageBody {
+  color: @p-text;
+}
+
+p.articleBody {
+  color: @p-text;
+}
+
+p.pageBody a,
+p.articleBody a {
+  color: @p-link;
+}
+
+p.codeBlock {
+  color: @s-text;
+  background-color: @secondary;
+}
+
+p.codeBlock a {
+  color: @s-link
+}
+
+//--- Background and text colors
+
+body,                                  // Primary regions
+.navbar.navbar-default.container,
+.well {
+  background-color: @primary;
+  color: @p-text;
+}
+
+div.rootstalk-block,                  // Secondary regions
+#block-bootstrap-rootstalk-tools,
+#block-development,
+#block-views-block-next-pc-event-block-1 {
+  background-color: @secondary;
+  color: @s-text;
+}
+
+//--- Primary region links
+
+a {                                   // Defaults for all links
+  color: @p-link;
+}
+
+.is-active {
+  background-color: @secondary !important;
+  color: contrast(@secondary, @lite, @dark) !important;
+}
+
+// dynamics
+
+a:hover,
+a:focus {
+  color: contrast(@primary, lighten(@p-link, 10%), darken(@p-link, 10%)) !important;
+}
+
+.is-active a:hover,
+.is-active a:focus {
+  color: contrast(@secondary, lighten(@s-link, 10%), darken(@s-link, 10%)) !important;
+  text-decoration: underline !important;
+}
+
+//--- Secondary region links
+
+a.well {
+  color: @s-link;
+}
+
+// dynamics
+
+a.well a:hover,
+a.well a:focus {
+  color: contrast(@secondary, lighten(@p-link, 10%), darken(@p-link, 10%)) !important;
+}
+
+//--- div.announcement
+
+@announcement: lighten(@secondary, 10%);
+
+div.announcement {
+  background: @announcement;
+  color: contrast(@announcement, @dark, @lite);
+}
+
+//-- link-button
+
+p.link-button {
+  background: @secondary;
+  color: @s-link;
+}
+
+//--- Admin toolbar
+
+.toolbar .toolbar-tray-horizontal > .toolbar-lining {
+  background-color: whitesmoke;
+}
+
+//--- author-info   See node--journal_article.html.php for details.
+
+div.author-info {
+  background-color: @author;
+  color: contrast(@author, @lite, @dark);
+}
+
+//--- Downloadable files and embedded links
+
+div .field--name-field-embedded-links div .field--item,
+.file span {
+  background-color: @secondary;
+  color: contrast(@secondary, @lite, @dark);
+}
+
+//--- Main menu
+
+div.col-sm-12 {
+  background: @secondary;
+}
+
+.navbar-default .navbar-nav li a {
+  color: darken(@p-link, 10%);
+}
+
+.navbar-default .navbar-nav li a:hover {
+  color: @p-link !important;
+}
+
+.navbar-default .navbar-nav li a .is-active {
+  background-color: @secondary !important;
+  color: @s-link;
+}
+
+//--- Rootstalk Block
+
+.rootstalk-block .nav li a {
+  color: @s-link;
+}
+
+.nav li a:hover,
+.nav li a:focus,
+.nav li a:active {
+  background-color: @primary;
+  color: contrast(@primary, @lite, @dark);
+}
+
+ul.menu.dropdown-menu {
+  background-color: transparent;
+}
+
+ul.menu.dropdown-menu li a {
+  background-color: @primary;
+  color: contrast(@primary, @lite, @dark);
+}
+
+//--- search
+
+input.form-search.form-control {
+  background: @secondary;
+  color: @s-text;
+}
+
+span.input-group-btn {
+  background-color: @secondary;
+}
+
+//--- .well - The secondary (right-hand) block region
+
+#block-views-block-next-pc-event-block-1 div.form-group div div.view-header,
+div.rootstalk-block div.block-text p {
+  background-color: lighten(@secondary, 10%);
+  color: darken(@s-text, 10%);
+}
+
+//--- .statistics-counter
+
+.statistics-counter {
+  background-color: @secondary;
+  color: @s-link;
+}
+
+//--- .breadcrumb
+
+ol.breadcrumb {
+  background-color: @secondary;
+}
+
+ol.breadcrumb li a {
+  color: darken(@p-link, 10%);
+}
+
+ol.breadcrumb li.active {
+  color: @s-link;
+}
+
+//--- div.panel
+
+@panel: lighten(@secondary, 10%);
+@panel-field: lighten(@panel, 10%);
+
+div.panel {
+  background: @panel;
+  color: contrast(@panel, @lite, @dark);
+}
+
+a.panel-title,
+div.panel-title {
+  background: @secondary;
+  color: contrast(@secondary, @lite, @dark);
+}
+
+textarea.form-control,
+select.form-control,
+input.form-control {
+  background: @panel-field;
+  color: contrast(@panel-field, @lite, @dark);
+}
+
+div.panel-body p.help-block {
+  color: contrast(@panel, @lite, @dark);
+}
+
+.btn-success.btn {
+  background-color: @lighten2;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-primary.btn {
+  background-color: @lighten2;
+  color:#fff;
+  border-color: #ffffff;
+
+}
+
+.table-striped > tbody > tr:nth-of-type(odd){
+  background-color: lighten(@secondary, 10%) !important;
+}
+
+//.past-issues-block.view {
+//  background: @primary;
+//}
+
+
+
+
+
+
+
