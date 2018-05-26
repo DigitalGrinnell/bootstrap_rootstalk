@@ -1,0 +1,31 @@
+{
+    "name": "digitalgrinnell/bootstrap_rootstalk",
+    "description": "Drupal 8 Bootstrap custom theme for ROOTSTALK",
+    "type": "drupal-custom-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mark A. McFate",
+            "role": "Creator"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "drupal/bootstrap": "^3.11"
+    },
+    "package": {
+        "name": "bootstrap_rootstalk",
+        "version": "dev-master",
+        "type":"drupal-custom-theme",
+        "source": {
+            "url": "https://github.com/DigitalGrinnell/bootstrap_rootstalk.git",
+            "type": "git",
+            "reference": "master"
+        }
+    }
+}
